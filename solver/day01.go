@@ -10,7 +10,7 @@ import (
 )
 
 //go:embed inputs/day_01.txt
-var input string
+var puzzle01 string
 
 func init() {
 	register(0, &Day01{})
@@ -21,7 +21,7 @@ type Day01 struct {
 }
 
 func (d *Day01) LoadInput() {
-	first, second := parseInput(strings.NewReader(input))
+	first, second := d.parseInput(strings.NewReader(puzzle01))
 	sort.Ints(first)
 	sort.Ints(second)
 
@@ -33,7 +33,7 @@ func (d *Day01) First() int {
 
 	distance := 0
 	for i := 0; i < len(first); i++ {
-		distance += getDistance(first[i], second[i])
+		distance += d.getDistance(first[i], second[i])
 	}
 
 	return distance
@@ -61,7 +61,7 @@ func (d *Day01) Second() int {
 	return distance
 }
 
-func parseInput(input io.Reader) ([]int, []int) {
+func (d *Day01) parseInput(input io.Reader) ([]int, []int) {
 	var (
 		first  []int
 		second []int
@@ -87,7 +87,7 @@ func parseInput(input io.Reader) ([]int, []int) {
 	return first, second
 }
 
-func getDistance(i, j int) int {
+func (d *Day01) getDistance(i, j int) int {
 	if i < j {
 		i, j = j, i
 	}

@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestProblems(t *testing.T) {
+func TestDay01(t *testing.T) {
 	d := Day01{input: [][]int{{3, 4, 2, 1, 3, 3}, {4, 3, 5, 3, 9, 3}}}
 
 	result := d.First()
