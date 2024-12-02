@@ -13,7 +13,13 @@ type Solver interface {
 
 // Get all registered problems
 func GetAll() []Solver {
-	return solvers[:]
+	var r []Solver
+	for _, s := range solvers {
+		if s != nil {
+			r = append(r, s)
+		}
+	}
+	return r
 }
 
 // Get the last registered problem

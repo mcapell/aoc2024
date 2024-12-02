@@ -1,15 +1,19 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/mcapell/aoc2024/solver"
 )
 
 func main() {
-	if len(os.Args) > 0 && os.Args[0] == "all" {
+	var runAll bool
+	flag.BoolVar(&runAll, "all", false, "Run all problems")
+	flag.Parse()
+
+	if runAll {
 		for _, d := range solver.GetAll() {
 			runTimed(d)
 		}
