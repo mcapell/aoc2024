@@ -41,18 +41,18 @@ func (d *Day04) Second() int {
 }
 
 func (d *Day04) parseInput(input io.Reader) []string {
-	var memory []string
+	var rows []string
 	scanner := bufio.NewScanner(input)
 	for scanner.Scan() {
 		line := scanner.Text()
-		memory = append(memory, strings.TrimSpace(line))
+		rows = append(rows, strings.TrimSpace(line))
 	}
 
 	if err := scanner.Err(); err != nil {
 		panic(err)
 	}
 
-	return memory
+	return rows
 }
 
 func (d *Day04) findAllWords() []string {
