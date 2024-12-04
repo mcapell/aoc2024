@@ -26,12 +26,13 @@ func main() {
 func runTimed(problem solver.Solver) {
 	problem.LoadInput()
 	t := time.Now()
+	fmt.Printf("Running %T\n", problem)
 
-	fmt.Printf("First result: %d\n", problem.First())
+	fmt.Printf("\tFirst result: %d\n", problem.First())
 	first := time.Since(t)
 
-	fmt.Printf("Second result: %d\n", problem.Second())
+	fmt.Printf("\tSecond result: %d\n", problem.Second())
 	second := time.Since(t)
 
-	fmt.Printf("Run %T: First: %dμs, Second: %dμs\n", problem, first.Microseconds(), second.Microseconds())
+	fmt.Printf("\tFirst solved in %dμs, Second in %dμs\n", first.Microseconds(), second.Microseconds())
 }
