@@ -6,4 +6,10 @@
 go run main.go all
 ```
 
+## Bootstrap a new day
+
+```
+go run bootstrap/*.go --day N
+```
+
 Let's code some holiday cheer!
