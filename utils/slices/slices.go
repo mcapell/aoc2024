@@ -5,3 +5,13 @@ func Copy[T any](src []T) []T {
 	copy(dst, src)
 	return dst
 }
+
+func IndexOf[T comparable](src []T, v T) int {
+	for i, value := range src {
+		if value == v {
+			return i
+		}
+	}
+
+	return -1
+}
