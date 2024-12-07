@@ -34,5 +34,30 @@ func runTimed(problem solver.Solver) {
 	fmt.Printf("\tSecond result: %d\n", problem.Second())
 	second := time.Since(t)
 
-	fmt.Printf("\tFirst solved in %dμs, Second in %dμs\n", first.Microseconds(), second.Microseconds())
+	fmt.Printf("\tFirst solved in %d%s, Second in %d%s\n",
+		getScaledValue(first.Microseconds()),
+		getUnit(first.Microseconds()),
+		getScaledValue(second.Microseconds()),
+		getUnit(second.Microseconds()))
+}
+
+func getUnit(micros int64) string {
+	var (
+		units = []string{"μs", "ms", "s"}
+		value int
+	)
+
+	for value = 0; micros > 1000 && value < 3; value++ {
+		micros /= 1000
+	}
+
+	return units[value]
+}
+
+func getScaledValue(micros int64) int64 {
+	for i := 0; micros > 1000 && i < 3; i++ {
+		micros /= 1000
+	}
+
+	return micros
 }
