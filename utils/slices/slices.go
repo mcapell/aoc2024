@@ -15,3 +15,11 @@ func IndexOf[T comparable](src []T, v T) int {
 
 	return -1
 }
+
+func DeepCopy2d[T any](src [][]T) [][]T {
+	var dst [][]T
+	for _, r := range src {
+		dst = append(dst, append([]T{}, r...))
+	}
+	return dst
+}
