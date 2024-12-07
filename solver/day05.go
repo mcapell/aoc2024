@@ -28,7 +28,7 @@ func (d *Day05) LoadInput() {
 	d.pages = pages
 }
 
-func (d *Day05) First() int {
+func (d *Day05) First() uint64 {
 	var result int
 	for _, page := range d.pages {
 		if d.isCorrect(page) {
@@ -36,10 +36,10 @@ func (d *Day05) First() int {
 		}
 	}
 
-	return result
+	return uint64(result)
 }
 
-func (d *Day05) Second() int {
+func (d *Day05) Second() uint64 {
 	var result int
 	for _, page := range d.pages {
 		if d.isCorrect(page) {
@@ -60,7 +60,7 @@ func (d *Day05) Second() int {
 
 		result += page[len(page)/2]
 	}
-	return result
+	return uint64(result)
 }
 
 func (d *Day05) parseInput(input io.Reader) (map[int][]int, [][]int) {

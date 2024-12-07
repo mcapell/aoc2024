@@ -48,7 +48,7 @@ func (d *Day03) LoadInput() {
 }
 
 // Solve the first problem, return the result
-func (d *Day03) First() int {
+func (d *Day03) First() uint64 {
 	valid := d.getValidInstructions(d.input)
 	var result int
 	for _, instruction := range valid {
@@ -57,11 +57,11 @@ func (d *Day03) First() int {
 		}
 	}
 
-	return result
+	return uint64(result)
 }
 
 // Solve the second problem, return the result
-func (d *Day03) Second() (_ int) {
+func (d *Day03) Second() uint64 {
 	valid := d.getValidInstructions(d.input)
 	var result int
 	var enable = true
@@ -80,7 +80,7 @@ func (d *Day03) Second() (_ int) {
 
 	}
 
-	return result
+	return uint64(result)
 }
 
 func (d *Day03) parseInput(input io.Reader) []string {

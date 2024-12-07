@@ -6,9 +6,9 @@ type Solver interface {
 	// Parses and loads the input
 	LoadInput()
 	// Solve the first problem, return the result
-	First() int
+	First() uint64
 	// Solve the second problem, return the result
-	Second() int
+	Second() uint64
 }
 
 // Get all registered problems

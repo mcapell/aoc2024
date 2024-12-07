@@ -20,16 +20,20 @@ func TestDay04(t *testing.T) {
 	)
 
 	t.Run("first problem", func(t *testing.T) {
-		expected := 18
-		result := d.First()
+		var (
+			expected uint64 = 18
+			result          = d.First()
+		)
 		if result != expected {
 			t.Errorf("expected %d. got: %d", expected, result)
 		}
 	})
 
 	t.Run("second problem", func(t *testing.T) {
-		expected := 9
-		result := d.Second()
+		var (
+			expected uint64 = 9
+			result          = d.Second()
+		)
 		if result != expected {
 			t.Errorf("expected %d. got: %d", expected, result)
 		}

@@ -37,11 +37,11 @@ func (d *DayXX) LoadInput() {
 	panic("not implemented")
 }
 
-func (d *DayXX) First() int {
+func (d *DayXX) First() uint64 {
 	panic("not implemented")
 }
 
-func (d *DayXX) Second() int {
+func (d *DayXX) Second() uint64 {
 	panic("not implemented")
 }
 
@@ -66,10 +66,27 @@ package solver
 import "testing"
 
 func TestDayXX(t *testing.T) {
+	var (
+		d = &Day07{}
+	)
 	t.Run("first problem", func(t *testing.T) {
+		var (
+			expected uint64 = 1
+			result          = d.First()
+		)
+		if expected != result {
+			t.Errorf("expected %d. got=%d", expected, result)
+		}
 	})
 
 	t.Run("second problem", func(t *testing.T) {
+		var (
+			expected uint64 = 1
+			result          = d.Second()
+		)
+		if expected != result {
+			t.Errorf("expected %d. got=%d", expected, result)
+		}
 	})
 }
 `

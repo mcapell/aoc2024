@@ -28,7 +28,7 @@ func (d *Day01) LoadInput() {
 	d.input = [][]int{first, second}
 }
 
-func (d *Day01) First() int {
+func (d *Day01) First() uint64 {
 	first, second := d.input[0], d.input[1]
 
 	distance := 0
@@ -36,10 +36,10 @@ func (d *Day01) First() int {
 		distance += d.getDistance(first[i], second[i])
 	}
 
-	return distance
+	return uint64(distance)
 }
 
-func (d *Day01) Second() int {
+func (d *Day01) Second() uint64 {
 	first, second := d.input[0], d.input[1]
 
 	// count how many times each value appears on list 2
@@ -58,7 +58,7 @@ func (d *Day01) Second() int {
 		distance += first[i] * counts[first[i]]
 	}
 
-	return distance
+	return uint64(distance)
 }
 
 func (d *Day01) parseInput(input io.Reader) ([]int, []int) {

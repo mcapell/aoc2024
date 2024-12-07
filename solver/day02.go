@@ -29,8 +29,8 @@ func (d *Day02) LoadInput() {
 }
 
 // Solve the first problem, return the result
-func (d *Day02) First() int {
-	var safeReports int
+func (d *Day02) First() uint64 {
+	var safeReports uint64
 
 	for _, report := range d.input {
 		if d.reportIsSafe(report) {
@@ -42,8 +42,8 @@ func (d *Day02) First() int {
 }
 
 // Solve the second problem, return the result
-func (d *Day02) Second() int {
-	var safeReports int
+func (d *Day02) Second() uint64 {
+	var safeReports uint64
 
 	for _, report := range d.input {
 		if d.reportIsSafe(report) {

@@ -30,13 +30,13 @@ func (d *Day06) LoadInput() {
 	d.input = d.parseInput(strings.NewReader(puzzle06))
 }
 
-func (d *Day06) First() int {
+func (d *Day06) First() uint64 {
 	pos := d.findStartingPosition()
 
 	input := slices.DeepCopy2d(d.input)
 	d.run(input, pos[0], pos[1], nil)
 
-	var count int
+	var count uint64
 	for _, row := range input {
 		for _, v := range row {
 			if v == 'X' {
@@ -47,7 +47,7 @@ func (d *Day06) First() int {
 	return count
 }
 
-func (d *Day06) Second() int {
+func (d *Day06) Second() uint64 {
 	pos := d.findStartingPosition()
 
 	input := slices.DeepCopy2d(d.input)
@@ -55,7 +55,7 @@ func (d *Day06) Second() int {
 	obstacles := map[int]PositionWithDirection{}
 	d.run(input, pos[0], pos[1], obstacles)
 
-	var numLoops int
+	var numLoops uint64
 	for _, obstacle := range obstacles {
 		i := slices.DeepCopy2d(d.input)
 

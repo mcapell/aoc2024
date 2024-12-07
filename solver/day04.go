@@ -24,7 +24,7 @@ func (d *Day04) LoadInput() {
 }
 
 // Solve the first problem, return the result
-func (d *Day04) First() int {
+func (d *Day04) First() uint64 {
 	words := d.findAllWords()
 	count := 0
 	for _, word := range words {
@@ -32,11 +32,11 @@ func (d *Day04) First() int {
 			count++
 		}
 	}
-	return count
+	return uint64(count)
 }
 
 // Solve the second problem, return the result
-func (d *Day04) Second() int {
+func (d *Day04) Second() uint64 {
 	return d.countXmasWords()
 }
 
@@ -88,8 +88,8 @@ func (d *Day04) findAllWords() []string {
 	return words
 }
 
-func (d *Day04) countXmasWords() int {
-	var count int
+func (d *Day04) countXmasWords() uint64 {
+	var count uint64
 
 	// For each 3x3 matrix, check if X-MAS word exist
 	for r := 0; r < len(d.input)-2; r++ {
